@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="crm-utils-plugin"/>
+    <!-- add our web resources -->
+
+    <web-resource key="jira-auto-plugin-trial-resources" name="crm-utils-plugin-department Web Resources">
+        <resource type="download" name="jira-auto-plugin-trial.css" location="/css/jira-auto-plugin-trial.css"/>
+        <resource type="download" name="jira-auto-plugin-trial.js" location="/js/jira-auto-plugin-trial.js"/>
+        <resource type="download" name="images/" location="/images"/>
+        <context>atl.general</context>
+    </web-resource>
+
+    <!--
+    <webwork1 key="jira-auto-plugin-trial-webwork" class="java.lang.Object">
+        <actions>
+            <action alias="DealSpecification" roles-required="user"
+                    name="ru.rvision.crm.specification.action.CRMSpekaWebAction">
+                <view name="success">templates/webwork/deal-speka.vm</view>
+            </action>
+            <action alias="EditSpecification" roles-required="user"
+                    name="ru.rvision.crm.specification.action.CRMSpekaWebAction">
+                <view name="success">templates/webwork/edit-blocks.vm</view>
+            </action>
+            <action alias="AddSpecification" roles-required="user"
+                    name="ru.rvision.crm.specification.action.CRMSpekaWebAction">
+                <view name="success">templates/webwork/add-blocks.vm</view>
+            </action>
+        </actions>
+    </webwork1>
+
+    <rest key="crm-rest" name="CRM REST" version="1.0" path="/crm"/>
+
+    <web-item key="crm-view-speka-item" name="CRM view speka item" section="operations-restore" weight="10">
+        <label key="Рассчитать спецификацию"/>
+        <link linkId="crm-view-speka-item">/secure/DealSpecification.jspa?issueKey=${issue.key}</link>
+        <condition class="ru.rvision.crm.specification.condition.MainSpekaCondition"/>
+    </web-item>
+
+    <web-item key="crm-edit-blocks-item" name="CRM edit blocs item" section="operations-restore" weight="20">
+        <param name="iconClass" value="aui-icon aui-icon-small aui-iconfont-settings"/>
+        <label key=""/>
+        <link linkId="crm-edit-blocks-item">/secure/EditSpecification.jspa</link>
+        <condition class="ru.rvision.crm.specification.condition.AdminSpecaCondition"/>
+    </web-item>
+    -->
+</atlassian-plugin>
